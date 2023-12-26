@@ -16,17 +16,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="./assets/css/main.min.css">
+  <!-- CSS Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" />
   <title>LOCRENT</title>
 </head>
 
 <body class="text-white">
+  <img class="bg" src="images/background.jpeg" alt="">
 
   <!-- NAVBAR -->
   <div class="position-relative" style="height: 83px;">
     <div class="fixed-top navbar-fixed">
-      <nav class="navbar navbar-expand-lg bg-dark">
+      <nav class="navbar navbar-expand-lg" id="mainNav">
         <div class="container">
           <a class="navbar-brand fs-1 fw-bold text-primary" href="index.php">LOCRENT</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
@@ -55,7 +57,7 @@
                 if (!isset($_SESSION['id'])) { ?>
                   <a href="login.php" class="btn btn-outline-primary">MASUK</a>
                 <?php } elseif (isset($_SESSION['id'])) {
-                  ?>
+                    ?>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

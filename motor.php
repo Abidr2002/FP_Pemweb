@@ -2,8 +2,8 @@
 session_start();
 include('admin/config/config.php');
 if (isset($_SESSION['id'])) {
-  $_SESSION['login_time'] = time();
-  include('session_time.php');
+    $_SESSION['login_time'] = time();
+    include('session_time.php');
 }
 ?>
 <html>
@@ -42,13 +42,13 @@ if (isset($_SESSION['id'])) {
     <div class="page-product-container container">
       <?php
       $kondisi = "jenis = 'Motor'";
-      $sql = "SELECT DISTINCT tipe, gambar, warna, transmisi, harga FROM kendaraan WHERE $kondisi";
-      $result = $conn->query($sql);
-      if ($result->num_rows > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-          $gambar = $row['gambar'];
-          $tipe = $row["tipe"];
-          ?>
+$sql = "SELECT DISTINCT tipe, gambar, warna, transmisi, harga FROM kendaraan WHERE $kondisi";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $gambar = $row['gambar'];
+        $tipe = $row["tipe"];
+        ?>
           <div class="page-product-item">
             <div>
               <?= "<img src='data:image/jpeg;base64," . base64_encode($gambar) . "' alt='$tipe' height='200'  class='img-fluid rounded'>"; ?>
@@ -65,12 +65,12 @@ if (isset($_SESSION['id'])) {
                 <?= $row["harga"] ?>
               </p>
               <?php
-              $kond = "tipe = '$tipe'";
-              $kond2 = "status = 1";
-              $query = "SELECT * FROM kendaraan WHERE $kond AND $kond2 ORDER BY id DESC LIMIT 1";
-              $hasil = $conn->query($query);
-              $baris = mysqli_fetch_assoc($hasil);
-              if (isset($_SESSION['id'])) { ?>
+            $kond = "tipe = '$tipe'";
+        $kond2 = "status = 1";
+        $query = "SELECT * FROM kendaraan WHERE $kond AND $kond2 ORDER BY id DESC LIMIT 1";
+        $hasil = $conn->query($query);
+        $baris = mysqli_fetch_assoc($hasil);
+        if (isset($_SESSION['id'])) { ?>
                 <a href="order.php?id=<?php echo $baris["id"]; ?>"><button class="button-sub-tipe">SEWA</button></a>
               <?php } else { ?>
                 <a href="login.php?id=<?php echo $baris["id"]; ?>"><button class="button-sub-tipe">SEWA</button></a>
@@ -78,8 +78,8 @@ if (isset($_SESSION['id'])) {
             </div>
           </div>
           <?php
-        }
-      } ?>
+    }
+} ?>
     </div>
   </section>
   <footer class="page-footer">

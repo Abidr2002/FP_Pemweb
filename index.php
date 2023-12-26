@@ -4,8 +4,8 @@ session_start();
 include 'admin/config/config.php';
 include './layout/header.php';
 if (isset($_SESSION['id'])) {
-  $_SESSION['login_time'] = time();
-  include('session_time.php');
+    $_SESSION['login_time'] = time();
+    include('session_time.php');
 }
 ?>
 <!-- MAIN CONTENT -->
